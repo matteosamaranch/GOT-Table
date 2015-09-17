@@ -11,6 +11,7 @@
 #import "Personaje.h"
 #import "Casa.h"
 #import "TableViewCell.h"
+#import "DetailViewController.h"
 
 @interface FirstTableViewController ()
 
@@ -25,12 +26,24 @@
     
     self.gotModel = [[GotModel alloc]init];
     [self.gotModel cargaModelo];
+    self.view.backgroundColor = [UIColor blackColor];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"pushSegue"]){
+        DetailViewController *detailViewController;
+        detailViewController = segue.destinationViewController;
+        Casa *casa = [self.gotModel.casas objectAtIndex:self.tableView.indexPathForSelectedRow.section];
+        Personaje *personaje = [casa.personajes objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+        detailViewController.personaje = personaje;
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning {
