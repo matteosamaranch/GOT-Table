@@ -82,7 +82,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="RCL-bh-J1t"/>
+                    <navigationItem key="navigationItem" id="RCL-bh-J1t">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="19p-vp-xcE">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="deletePerson:" destination="4ac-GU-YsJ" id="olG-9J-X0b"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="biographyTextview" destination="DEd-wm-fha" id="AxV-K1-gQA"/>
                         <outlet property="nameImage" destination="63I-cN-2F1" id="bFi-WA-yUX"/>

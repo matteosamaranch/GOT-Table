@@ -20,7 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -29,6 +28,9 @@
     self.nameLabel.text = self.personaje.nombre;
     self.biographyTextview.text = self.personaje.descripcion;
 
+}
+- (IBAction)deletePerson:(UIBarButtonItem *)sender {
+    
 }
 
 - (void)didReceiveMemoryWarning {
