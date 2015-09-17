@@ -60,16 +60,19 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"celda2" forIndexPath:indexPath];
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"celda2" forIndexPath:indexPath];
-    
     Casa *casa = [self.gotModel.casas objectAtIndex:indexPath.section];
     Personaje *auxPersonaje = [casa.personajes objectAtIndex:indexPath.row];
     
     cell.imageCell.image =[UIImage imageNamed:auxPersonaje.imagen];
     cell.labelName.text = auxPersonaje.nombre;
+    cell.imageBackground.image = [UIImage imageNamed:casa.imagen];
 
-    
-    
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 52;
 }
 
 /*
