@@ -51,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="897" y="12"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="4He-j7-2cO">
             <objects>
-                <viewController id="4ac-GU-YsJ" sceneMemberID="viewController">
+                <viewController id="4ac-GU-YsJ" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="437-ev-E35"/>
                         <viewControllerLayoutGuide type="bottom" id="K9F-IX-F0w"/>
@@ -82,6 +82,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="RCL-bh-J1t"/>
+                    <connections>
+                        <outlet property="biographyTextview" destination="DEd-wm-fha" id="AxV-K1-gQA"/>
+                        <outlet property="nameImage" destination="63I-cN-2F1" id="bFi-WA-yUX"/>
+                        <outlet property="nameLabel" destination="OT0-e8-ktu" id="rc9-CN-5dL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zar-9b-BA6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
