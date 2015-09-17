@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C791D9D1BAAA799003B6B52 /* FirstTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C791D9C1BAAA799003B6B52 /* FirstTableViewController.m */; };
+		4C791DA01BAAB67C003B6B52 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C791D9F1BAAB67C003B6B52 /* TableViewCell.m */; };
 		8C2E8E5D1946FE2A00D41ED9 /* aemon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E8DFF1946FE2A00D41ED9 /* aemon.png */; };
 		8C2E8E5E1946FE2A00D41ED9 /* aerys.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E8E001946FE2A00D41ED9 /* aerys.png */; };
 		8C2E8E5F1946FE2A00D41ED9 /* alliser.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E8E011946FE2A00D41ED9 /* alliser.png */; };
@@ -134,6 +135,8 @@
 /* Begin PBXFileReference section */
 		4C791D9B1BAAA799003B6B52 /* FirstTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTableViewController.h; sourceTree = "<group>"; };
 		4C791D9C1BAAA799003B6B52 /* FirstTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstTableViewController.m; sourceTree = "<group>"; };
+		4C791D9E1BAAB67C003B6B52 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		4C791D9F1BAAB67C003B6B52 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		8C2E8DFF1946FE2A00D41ED9 /* aemon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aemon.png; sourceTree = "<group>"; };
 		8C2E8E001946FE2A00D41ED9 /* aerys.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aerys.png; sourceTree = "<group>"; };
 		8C2E8E011946FE2A00D41ED9 /* alliser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alliser.png; sourceTree = "<group>"; };
@@ -421,6 +424,8 @@
 				8C50263E1946E511009D2C47 /* Supporting Files */,
 				4C791D9B1BAAA799003B6B52 /* FirstTableViewController.h */,
 				4C791D9C1BAAA799003B6B52 /* FirstTableViewController.m */,
+				4C791D9E1BAAB67C003B6B52 /* TableViewCell.h */,
+				4C791D9F1BAAB67C003B6B52 /* TableViewCell.m */,
 			);
 			path = GOTTableView;
 			sourceTree = "<group>";
@@ -668,6 +673,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C791DA01BAAB67C003B6B52 /* TableViewCell.m in Sources */,
 				8CD142D41946E790003AE87B /* Casa.m in Sources */,
 				8CD142D11946E592003AE87B /* GotModel.m in Sources */,
 				4C791D9D1BAAA799003B6B52 /* FirstTableViewController.m in Sources */,

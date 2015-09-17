@@ -10,6 +10,7 @@
 #import "GotModel.h"
 #import "Personaje.h"
 #import "Casa.h"
+#import "TableViewCell.h"
 
 @interface FirstTableViewController ()
 
@@ -57,13 +58,15 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"celda" forIndexPath:indexPath];
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"celda2" forIndexPath:indexPath];
+    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"celda2" forIndexPath:indexPath];
     
     Casa *casa = [self.gotModel.casas objectAtIndex:indexPath.section];
     Personaje *auxPersonaje = [casa.personajes objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = auxPersonaje.nombre;
-    cell.imageView.image = [UIImage imageNamed:auxPersonaje.imagen];
+    cell.imageCell.image =[UIImage imageNamed:auxPersonaje.imagen];
+    cell.labelName.text = auxPersonaje.nombre;
+
     
     
     return cell;
