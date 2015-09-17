@@ -124,10 +124,11 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        Casa *casa = [self.gotModel.casas objectAtIndex:indexPath.section];
-        NSMutableArray *personajes = [casa.personajes mutableCopy];
-        [personajes removeObjectAtIndex:indexPath.row];
-        casa.personajes = personajes.copy;
+//        Casa *casa = [self.gotModel.casas objectAtIndex:indexPath.section];
+//        NSMutableArray *personajes = [casa.personajes mutableCopy];
+//        [personajes removeObjectAtIndex:indexPath.row];
+//        casa.personajes = personajes.copy;
+        [self.gotModel killCharacter:indexPath];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {

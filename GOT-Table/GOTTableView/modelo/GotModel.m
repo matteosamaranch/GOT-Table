@@ -12,6 +12,22 @@
 
 @implementation GotModel
 
+- (void)killCharacter: (NSIndexPath *)index
+{
+    Casa *casa = [self.casas objectAtIndex:index.section];
+    //NSMutableArray *personajes = [casa.personajes mutableCopy];
+    Personaje *persona = [casa.personajes objectAtIndex:index.row];
+    [self killPersonaje:persona fromCasa:casa];
+}
+
+- (void)killPersonaje:(Personaje *)personaje fromCasa:(Casa *)casa {
+    //[[self.casas objectAtIndex:casa]removeObjectAtIndex:personaje];
+    NSMutableArray *personajes = [casa.personajes mutableCopy];
+    [personajes removeObject:personaje];
+    casa.personajes = [personajes copy];
+
+}
+
 - (void) cargaModelo
 {
     NSString* filePath = [[NSBundle mainBundle] pathForResource:@"personajes" ofType:@"json"];

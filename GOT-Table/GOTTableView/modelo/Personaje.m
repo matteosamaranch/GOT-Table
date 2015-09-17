@@ -8,6 +8,9 @@
 
 #import "Personaje.h"
 
+
 @implementation Personaje
+
+
 
 @end

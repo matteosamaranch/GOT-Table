@@ -12,4 +12,6 @@
 @property (nonatomic, strong) NSString* nombre;
 @property (nonatomic, strong) NSString* descripcion;
 @property (nonatomic, strong) NSString* imagen;
+
+
 @end
