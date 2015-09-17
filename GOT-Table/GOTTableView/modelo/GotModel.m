@@ -28,6 +28,19 @@
 
 }
 
+- (void)killPersonaje:(Personaje *)personaje
+{    
+    for (Casa *casa in self.casas) {
+        for (Personaje *personajeInCasa in casa.personajes) {
+            if ([personajeInCasa.nombre isEqualToString:personaje.nombre]) {
+                [self killPersonaje:personajeInCasa fromCasa:casa];
+                
+                return;
+            }
+        }
+    }
+}
+
 - (void) cargaModelo
 {
     NSString* filePath = [[NSBundle mainBundle] pathForResource:@"personajes" ofType:@"json"];

@@ -41,9 +41,15 @@
     return @"Kill";
 }
 
-- (void)killPersonaje:(Personaje *)personaje
+- (void)didPressKillPersonaje:(Personaje *)personaje
 {
     NSLog(@"DEAD");
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    [self.gotModel killPersonaje:personaje];
+    
+    [self.tableView reloadData];
+    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

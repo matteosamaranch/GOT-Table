@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class Personaje;
+
 @interface GotModel : NSObject
 @property (nonatomic, strong) NSArray* casas;
 @property (nonatomic, strong) NSArray* personajes;
 - (void) cargaModelo;
 - (void)killCharacter: (NSIndexPath *)index;
+- (void)killPersonaje:(Personaje *)personaje;
+
 @end

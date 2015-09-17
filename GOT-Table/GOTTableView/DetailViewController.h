@@ -12,7 +12,7 @@
 
 @protocol DetailViewControllerDelegate <NSObject>
 
-- (void)killPersonaje:(Personaje *)personaje;
+- (void)didPressKillPersonaje:(Personaje *)personaje;
 
 @end
 
