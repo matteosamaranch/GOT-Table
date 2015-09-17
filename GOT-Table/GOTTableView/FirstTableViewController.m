@@ -9,6 +9,7 @@
 #import "FirstTableViewController.h"
 #import "GotModel.h"
 #import "Personaje.h"
+#import "Casa.h"
 
 @interface FirstTableViewController ()
 
@@ -54,7 +55,7 @@
     Personaje *auxPersonaje = [[Personaje alloc] init];
     auxPersonaje = [self.gotModel.personajes objectAtIndex:indexPath.row];
     cell.textLabel.text = auxPersonaje.nombre;
-    
+    cell.imageView.image = [UIImage imageNamed:auxPersonaje.imagen];
     return cell;
 }
 
