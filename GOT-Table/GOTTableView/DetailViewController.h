@@ -10,7 +10,15 @@
 
 #import "Personaje.h"
 
+@protocol DetailViewControllerDelegate <NSObject>
+
+- (void)killPersonaje:(Personaje *)personaje;
+
+@end
+
 @interface DetailViewController : UIViewController
+
+@property (weak, nonatomic) id<DetailViewControllerDelegate> delegate;
 
 @property (strong, nonatomic) Personaje *personaje;
 

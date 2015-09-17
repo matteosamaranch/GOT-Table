@@ -30,7 +30,7 @@
 
 }
 - (IBAction)deletePerson:(UIBarButtonItem *)sender {
-    
+    [self.delegate killPersonaje:self.personaje];
 }
 
 - (void)didReceiveMemoryWarning {

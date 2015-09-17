@@ -13,7 +13,7 @@
 #import "TableViewCell.h"
 #import "DetailViewController.h"
 
-@interface FirstTableViewController ()
+@interface FirstTableViewController () <DetailViewControllerDelegate>
 
 @property (strong, nonatomic) GotModel *gotModel;
 
@@ -41,14 +41,18 @@
     return @"Kill";
 }
 
+- (void)killPersonaje:(Personaje *)personaje
+{
+    NSLog(@"DEAD");
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"pushSegue"]){
-        DetailViewController *detailViewController;
-        detailViewController = segue.destinationViewController;
+        DetailViewController *detailViewController = segue.destinationViewController;
         Casa *casa = [self.gotModel.casas objectAtIndex:self.tableView.indexPathForSelectedRow.section];
         Personaje *personaje = [casa.personajes objectAtIndex:self.tableView.indexPathForSelectedRow.row];
         detailViewController.personaje = personaje;
-        
+        detailViewController.delegate = self;
     }
 }
 
