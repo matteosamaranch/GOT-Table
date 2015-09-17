@@ -41,21 +41,31 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 1;
+    return [self.gotModel.casas count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.gotModel.personajes count];;
+    //return [self.gotModel.personajes count];;
+    Casa *casa = [self.gotModel.casas objectAtIndex:section];
+    return [casa.personajes count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    Casa *casa = [self.gotModel.casas objectAtIndex:section];
+    return casa.nombre;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"celda" forIndexPath:indexPath];
     
-    Personaje *auxPersonaje = [[Personaje alloc] init];
-    auxPersonaje = [self.gotModel.personajes objectAtIndex:indexPath.row];
+    Casa *casa = [self.gotModel.casas objectAtIndex:indexPath.section];
+    Personaje *auxPersonaje = [casa.personajes objectAtIndex:indexPath.row];
+    
     cell.textLabel.text = auxPersonaje.nombre;
     cell.imageView.image = [UIImage imageNamed:auxPersonaje.imagen];
+    
+    
     return cell;
 }
 
