@@ -7,8 +7,12 @@
 //
 
 #import "FirstTableViewController.h"
+#import "GotModel.h"
+#import "Personaje.h"
 
 @interface FirstTableViewController ()
+
+@property (strong, nonatomic) GotModel *gotModel;
 
 @end
 
@@ -16,6 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.gotModel = [[GotModel alloc]init];
+    [self.gotModel cargaModelo];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -32,26 +39,24 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.gotModel.personajes count];;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"celda" forIndexPath:indexPath];
     
-    // Configure the cell...
+    Personaje *auxPersonaje = [[Personaje alloc] init];
+    auxPersonaje = [self.gotModel.personajes objectAtIndex:indexPath.row];
+    cell.textLabel.text = auxPersonaje.nombre;
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
