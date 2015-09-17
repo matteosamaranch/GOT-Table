@@ -27,12 +27,18 @@
     self.gotModel = [[GotModel alloc]init];
     [self.gotModel cargaModelo];
     self.view.backgroundColor = [UIColor blackColor];
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"Kill";
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -113,17 +119,22 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        Casa *casa = [self.gotModel.casas objectAtIndex:indexPath.section];
+        NSMutableArray *personajes = [casa.personajes mutableCopy];
+        [personajes removeObjectAtIndex:indexPath.row];
+        casa.personajes = personajes.copy;
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
