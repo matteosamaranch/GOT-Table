@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="celda2" rowHeight="50" id="KzJ-R7-qHG" customClass="TableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="celda2" rowHeight="50" id="KzJ-R7-qHG" customClass="TableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KzJ-R7-qHG" id="0YU-DG-P3a">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -36,6 +36,7 @@
                                 <connections>
                                     <outlet property="imageCell" destination="4SP-2C-iXF" id="brN-6Q-YcP"/>
                                     <outlet property="labelName" destination="UOz-4I-fcc" id="OXX-eM-gvV"/>
+                                    <segue destination="4ac-GU-YsJ" kind="push" identifier="pushSegue" id="aeG-Zr-eAn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -49,6 +50,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIz-qe-F0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="897" y="12"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4He-j7-2cO">
+            <objects>
+                <viewController id="4ac-GU-YsJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="437-ev-E35"/>
+                        <viewControllerLayoutGuide type="bottom" id="K9F-IX-F0w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UOj-i8-iCm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="63I-cN-2F1">
+                                <rect key="frame" x="110" y="151" width="100" height="100"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OT0-e8-ktu">
+                                <rect key="frame" x="16" y="96" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="..." translatesAutoresizingMaskIntoConstraints="NO" id="DEd-wm-fha">
+                                <rect key="frame" x="40" y="302" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.58099538382324445" green="0.62040325126262619" blue="0.58769142215472758" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RCL-bh-J1t"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zar-9b-BA6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1355" y="12"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oF4-mh-IQ2">
